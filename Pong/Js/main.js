@@ -88,7 +88,7 @@
         play: function(){
             this.clean();
             this.draw();
-            this.board.ball.move;
+            this.board.ball.move();
         }
     }
 
@@ -136,7 +136,9 @@ document.addEventListener("keydown", function(ev){
 });
 
 window.requestAnimationFrame(controller);
-
+setTimeout(function(){
+    ball.direction = -1;
+},4000)
 function controller(){
     board_view.play();
     window.requestAnimationFrame(controller);
